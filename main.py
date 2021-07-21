@@ -54,7 +54,7 @@ async def on_command_error(context,error):
 #ban
 @client.command(name='ban', pass_context = True)
 @commands.has_permissions(ban_members=True)
-async def ban(context, member: discord.Member, *, reason=None):
+async def ban(context, member: discord.Member, *, reason=reason):
   await context.send(member.display_name + " has been BANNED from the sever, Because " + reason)
   await member.ban(reason=reason)
 
